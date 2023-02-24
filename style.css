@@ -70,12 +70,24 @@ header {
     height: 70px;
 }
 
+#mobile-navigation {
+    display: none;
+}
+
+.micon{
+    display: none;
+}
+
 ul {
     list-style-type: none;
 }
 
 .contacts ul {
     padding-left: 0;
+}
+
+.contacts-mobile {
+    display: none;
 }
 
 header a {
@@ -89,6 +101,7 @@ header a {
 .introduction{
     background-image:linear-gradient(0deg, rgba(9,19,28,0.9556956571691176) 15%, rgba(9,19,28,0.5495331921831232) 63%, rgba(0,212,255,0) 100%), url(/assets/Papildomosfoto/brent-cox-ydGRmobx5jA-unsplash.jpg);
     width: 100%;
+    height: max-content;
     position: absolute;
     top: 40px;
     display: block;
@@ -140,7 +153,7 @@ input[id="main-search-bar"] {
 }
 
 .autocomplete-items {
-    position: absolute;
+    /* position: absolute; */
     border: 1px solid #d4d4d4;
     border-bottom: none;
     border-top: none;
@@ -173,15 +186,6 @@ input[id="main-search-bar"] {
     color: #fff;
 }
 
-/* form {
-    position:relative;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    z-index: 15;
-} */
-
 #up-page {
     right: 40px;
     bottom: 40px;
@@ -211,8 +215,8 @@ input[id="main-search-bar"] {
 
 .statement{
     justify-content: space-evenly;
-    padding-top: 100px;
-    padding-bottom: 200px;
+    margin-top: 100px;
+    margin-bottom: 60px;
     align-items: center;
 }
 
@@ -226,37 +230,147 @@ input[id="main-search-bar"] {
     line-height: 20px;
 }
 
+#btn-form{
+    display: flex;
+    justify-content: center;
+    margin: 120px auto 0px auto;
+    padding: 20px 100px 20px 100px;
+    font-size: 2rem;
+    border-radius: 15px;
+    /* text-decoration: underline; */
+    background-color: #00000037;
+    border: 0.5px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+#popupform{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 300;
+    background-color: white;
+    width: 600px;
+    height: 400px;
+    max-width: 80%;
+    background-color: hsla(0, 0%, 100%, 0.168);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 299;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+#popupcontact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    grid-template-areas: 
+    "fn ln"
+    "em pn"
+    "ta ta"
+    "sm sm";
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+input[fname]{
+    grid-area: fn;
+}
+
+input[lname]{
+    grid-area: ln;
+}
+
+input[email]{
+    grid-area: em;
+}
+
+input[phone_number]{
+    grid-area: pn;
+}
+
+input[textarea]{
+    grid-area: ta;
+}
+
+button[submit]{
+    grid-area: sm;
+}
+
+
+.active {
+    display: block;
+}
+
+.open {
+    display: block;
+}
+
+.pop-up-header{
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop-up-title{
+    color: #000;
+    text-transform: uppercase;
+    padding-left: 15px;
+}
+
+#closebutton{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border-radius: 1px solid black;
+}
+
 /* Hotel */
 
 .hotel{
-    margin-top: 1160px;
+    display: block;
+    margin-top: 1300px;
     padding-bottom: 300px;
     flex-direction: column;
-    align-items: center;
 }
 
 .country{
-    align-items: center;
-    justify-content: center;
-    margin: 15px;
+    width: 600px;
+    margin: 15px auto auto;
     padding-bottom: 15px;
 }
 
-.country ul{
-    columns: 6;
+.country button{
     z-index: 1;
     font-weight: 600;
-    width: 600px;
-    padding: 0;
     justify-content: space-evenly;
-    align-items: center;
     margin: auto;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
-.country ul > li:first-child{
-    background-color: #f1c94d;
-    padding: 4px;
+.button_active{
+    background-color: #f1c94d !important ; 
     border-radius: 5px;
+    color: #000 !important;
+    padding: 4px 15px 4px;
 }
 
 .hotelroom{
@@ -270,8 +384,6 @@ input[id="main-search-bar"] {
     background-color: black;
     max-width: 253px;
     border-radius: 15px;
-    align-items: center;
-    justify-content: space-evenly;
     display: inline-block;
     height: 100%;
 }
@@ -330,14 +442,21 @@ input[id="main-search-bar"] {
     display: inline-block;
 }
 
-.hotel > a {
+#china, #india, #bhutan, #thailand, #nepal{
+    display: none;
+}
+
+.aroom{
+    justify-content: center;
+}
+
+.aroom > a {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
     background-color: #09131c;
     border: 3px solid #fff;
     padding: 11px 25px;
-    align-self: center;
 }
 
 /* quote */
@@ -348,7 +467,8 @@ input[id="main-search-bar"] {
     align-items: center;
     right: 0;
     left: 0;
-    top: 2000px;
+    top: 0;
+    margin-top: 2000px;
 }
 
 .quotation-words{
@@ -401,7 +521,8 @@ input[id="main-search-bar"] {
 
 .banners {
     position: absolute;
-    top: 2350px;
+    top: 0px;
+    margin-top: 2280px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -422,7 +543,8 @@ input[id="main-search-bar"] {
 /* plans contacts */
 
 .plans-contacts {
-    top: 3150px;
+    top: 0;
+    margin-top: 2990px;
     background-image: url(/assets/Papildomosfoto/pngfind.com-dots-png-1004804.png);
     background-size: contain;
     position: absolute;
@@ -559,7 +681,8 @@ input[id="main-search-bar"] {
 
 footer {
     position: absolute;
-    top: 4350px;
+    margin-top: 4200px;
+    top: 0;
     width: 100%;
     display: block;
     flex-direction:row;
@@ -572,4 +695,261 @@ footer {
 .credits > span {
     font-weight: 600;
     color: #8a90b0;
+}
+
+.hotelroom-tablet{
+    /* display: block; */
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    row-gap: 35px;
+}
+
+@media all and (max-width: 980px) {
+    .offers{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        text-align: center;
+        margin: 35px;
+        justify-items: center;
+    }
+
+    .offer {
+        padding: 30px;
+    }
+
+    .statement{
+        margin: 55px;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 100px;
+    }
+
+    .hotel {
+        margin-top: 1750px;
+        display: block;
+    }
+
+    /* .hotelroom {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        justify-items: center;
+        row-gap: 35px;
+    } */
+
+    .room {
+        margin-bottom: 15px;
+    }
+
+    .hotel > a {
+        margin: 530px;
+    }
+
+    .quote {
+        margin-top: 2850px;
+    }
+
+    .comment {
+        max-width: 450px;
+    }
+
+    .banners {
+        margin-top: 3150px;
+        left: 25px;
+        right: 25px;
+        gap: 60px;
+    }
+
+    .banner-text {
+        text-align: center;
+    }
+
+    .banner-img img{
+        max-width: 350px;
+    }
+
+    .plans-contacts {
+        margin-top: 3810px;
+    }
+
+    .plan-choice {
+        padding-bottom: 100px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: center;
+        gap: 25px;
+    }
+
+    footer {
+        margin-top: 5650px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .contacts{
+        display: none;
+    }
+
+    .contacts-mobile {
+        display: block;
+        margin: 0;
+    }
+
+    .contacts-mobile ul {
+        padding: 5px;
+        margin: 0;
+        margin-left: 10px;
+    }
+    
+    .socials ul {
+        padding-left: 15px;
+    }
+
+    .navigation {
+        background-color: rgba(9, 19, 28, 0.700);
+    }
+
+    .nav{
+        display: none;
+    }
+
+    #mobile-navigation {
+        display: none;
+        position: relative;
+        width: 100%;
+        background-color: #09131c;
+        z-index: 1001;
+    }
+    
+    #mobile-navigation ul {
+        flex-direction: column;
+        z-index: 1000;
+        position: fixed;
+        top: 94px;
+        height: auto;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        background-color: #09131c;
+        padding: 0;
+    }
+
+    #mobile-navigation li {
+        padding: 15px;
+    }
+
+    #mobile-navigation li:hover {
+        background: linear-gradient(312deg, rgba(255,255,255,1) 11%, rgba(0,212,255,0) 100%);
+    }
+
+    .micon {
+        display: block;
+        margin: 10px;
+        right: 0;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    #main-search-bar{
+        width: auto;
+    }
+
+    .main h2{
+        letter-spacing: 0;
+    }
+    
+    .main h1 {
+        font-size: 5rem;
+        margin: auto;
+    }
+
+    .offers{
+        margin: 20px;
+        padding-top: 30px;
+    }
+
+    .statement{
+        padding: 0px;
+        margin: 20px;
+    }
+
+    .hotel {
+        margin-top: 1360px;
+    }
+
+    .hotelroom-phone{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4);
+    }
+
+    .country{
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px;
+        background-color: #000;
+    }
+
+    .hotelroom{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4);
+    }
+
+    .hotel > a {
+        margin-top: 1560px;
+    }
+
+    .quote{
+        margin-top: 3800px;
+        max-width: auto;
+        justify-content: center;
+        justify-items: center;
+        left: 0;
+        right: 0;
+    }
+
+    .banners{
+        margin-top: 4200px;
+        justify-content: center;
+    }
+
+    .banner-1{
+        display: grid;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .banner-2{
+        display: grid;
+        text-align: center;
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .plans-contacts {
+        margin-top: 5250px;
+    }
+
+    footer {
+        margin-top: 7800px;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 5px;
+        text-align: center;
+    }
+
 }
