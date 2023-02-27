@@ -99,7 +99,7 @@ header a {
 /* introduction */
 
 .introduction{
-    background-image:linear-gradient(0deg, rgba(9,19,28,0.9556956571691176) 15%, rgba(9,19,28,0.5495331921831232) 63%, rgba(0,212,255,0) 100%), url(/assets/Papildomosfoto/brent-cox-ydGRmobx5jA-unsplash.jpg);
+    background-image:linear-gradient(0deg, rgba(9,19,28,0.9556956571691176) 15%, rgba(9,19,28,0.5495331921831232) 63%, rgba(0,212,255,0) 100%), url(assets/Papildomosfoto/introduction-bgi.jpg);
     width: 100%;
     height: max-content;
     position: absolute;
@@ -251,66 +251,46 @@ input[id="main-search-bar"] {
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: 200ms ease-in-out;
-    border: 1px solid black;
+    border: 1px solid #fff;
     border-radius: 10px;
     z-index: 300;
     background-color: white;
     width: 600px;
     height: 400px;
     max-width: 80%;
-    background-color: hsla(0, 0%, 100%, 0.168);
+    background-color: #09131c;
 }
 
 #overlay {
-    position: fixed;
     display: none;
+    position: fixed;
     transition: 200ms ease-in-out;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 299;
-    background-color: hsla(0, 0%, 0%, 0.5);
+    background-color: hsla(0, 0%, 0%, 0.495);
 }
 
 #popupcontact {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    grid-template-areas: 
-    "fn ln"
-    "em pn"
-    "ta ta"
-    "sm sm";
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+    height: 300px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
+    row-gap: 15px;
+    position: absolute;
+    margin: 15px auto;
+    left: 0;
+    right: 0;
+    width: 300px;
 }
 
-input[fname]{
-    grid-area: fn;
+#popupcontact > input, textarea {
+    background: #000;
+    color: #fff;
+    height: 30px;
 }
-
-input[lname]{
-    grid-area: ln;
-}
-
-input[email]{
-    grid-area: em;
-}
-
-input[phone_number]{
-    grid-area: pn;
-}
-
-input[textarea]{
-    grid-area: ta;
-}
-
-button[submit]{
-    grid-area: sm;
-}
-
 
 .active {
     display: block;
@@ -320,6 +300,14 @@ button[submit]{
     display: block;
 }
 
+#popupcontact > button {
+    border:none;
+    border-radius: 7px;
+    background-color: #0059ab;
+    color: #fff;
+    padding: 20px 20px 20px 20px;
+}
+
 .pop-up-header{
     border-bottom: 1px solid black;
     justify-content: space-between;
@@ -327,7 +315,7 @@ button[submit]{
 }
 
 .pop-up-title{
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     padding-left: 15px;
 }
@@ -338,6 +326,8 @@ button[submit]{
     margin-right: 15px;
     border-radius: 50%;
     border-radius: 1px solid black;
+    background-color: #000;
+    color: #fff;
 }
 
 /* Hotel */
@@ -442,21 +432,37 @@ button[submit]{
     display: inline-block;
 }
 
+#singapore {
+    /* display: none; */
+    justify-content: space-evenly;
+    padding-top: 15px;
+    margin-bottom: 75px;
+    height: 500px;
+}
+
 #china, #india, #bhutan, #thailand, #nepal{
     display: none;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    margin-bottom: 75px;
+    height: 500px;
 }
 
 .aroom{
     justify-content: center;
 }
 
-.aroom > a {
+.hotel > a {
+    display: flex;
+    width: 150px;
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
     background-color: #09131c;
     border: 3px solid #fff;
     padding: 11px 25px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 /* quote */
@@ -545,7 +551,7 @@ button[submit]{
 .plans-contacts {
     top: 0;
     margin-top: 2990px;
-    background-image: url(/assets/Papildomosfoto/pngfind.com-dots-png-1004804.png);
+    background-image: url(assets/Papildomosfoto/pngfind.com-dots-png-1004804.png);
     background-size: contain;
     position: absolute;
     display: block;
@@ -680,11 +686,9 @@ button[submit]{
 /* footer */
 
 footer {
-    position: absolute;
-    margin-top: 4200px;
-    top: 0;
+    margin-top: 1930px;
     width: 100%;
-    display: block;
+    display:block;
     flex-direction:row;
     align-items: center;
     justify-content: space-around;
@@ -695,16 +699,6 @@ footer {
 .credits > span {
     font-weight: 600;
     color: #8a90b0;
-}
-
-.hotelroom-tablet{
-    /* display: block; */
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    justify-items: center;
-    row-gap: 35px;
 }
 
 @media all and (max-width: 980px) {
@@ -734,25 +728,38 @@ footer {
         display: block;
     }
 
-    /* .hotelroom {
+    #singapore {
         margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
+        flex-wrap: wrap;
         justify-items: center;
         row-gap: 35px;
-    } */
+    }
+
+    #china, #india, #bhutan, #thailand, #nepal{
+        margin-top: 50px;
+        display: none;
+        flex-wrap: wrap;
+        justify-items: center;
+        row-gap: 35px;
+    }
 
     .room {
         margin-bottom: 15px;
     }
 
     .hotel > a {
-        margin: 530px;
+        display: flex;
+        margin: 610px auto 0 auto;
+        width: 150px;
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #09131c;
+        border: 3px solid #fff;
     }
 
     .quote {
-        margin-top: 2850px;
+        margin-top: 3100px;
     }
 
     .comment {
@@ -760,7 +767,7 @@ footer {
     }
 
     .banners {
-        margin-top: 3150px;
+        margin-top: 3440px;
         left: 25px;
         right: 25px;
         gap: 60px;
@@ -775,20 +782,29 @@ footer {
     }
 
     .plans-contacts {
-        margin-top: 3810px;
+        margin-top: 3970px;
+        background-image: url(assets/Papildomosfoto/pngfind.com-dots-png-1004804.png);
+        background-repeat: repeat-y;
     }
 
     .plan-choice {
         padding-bottom: 100px;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         justify-items: center;
         gap: 25px;
     }
 
     footer {
-        margin-top: 5650px;
+        margin-top: 2530px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+}
+
+@media all and (max-width: 725px){
+    footer {
+        margin-top: 3220px;
         flex-wrap: wrap;
         padding: 20px;
     }
@@ -883,14 +899,8 @@ footer {
     }
 
     .hotel {
-        margin-top: 1360px;
-    }
-
-    .hotelroom-phone{
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(4);
+        margin-top: 1560px;
+        flex-direction: row;
     }
 
     .country{
@@ -899,22 +909,37 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 15px;
-        background-color: #000;
     }
 
-    .hotelroom{
-        margin-top: 30px;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(4);
+    #singapore{
+        margin-top: 50px;
+        display: none;
+        flex-wrap: wrap;
+        justify-items: center;
+        row-gap: 35px;
+    }
+
+    #china, #india, #bhutan, #thailand, #nepal{
+        margin-top: 50px;
+        display: none;
+        flex-wrap: wrap;
+        justify-items: center;
+        row-gap: 35px;
     }
 
     .hotel > a {
-        margin-top: 1560px;
+        display: flex;
+        margin: 620px auto;
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #09131c;
+        border: 3px solid #fff;
+        padding: 11px 25px;
     }
 
     .quote{
-        margin-top: 3800px;
+        margin-top: 3000px;
         max-width: auto;
         justify-content: center;
         justify-items: center;
@@ -923,7 +948,7 @@ footer {
     }
 
     .banners{
-        margin-top: 4200px;
+        margin-top: 3300px;
         justify-content: center;
     }
 
@@ -941,15 +966,42 @@ footer {
     }
 
     .plans-contacts {
-        margin-top: 5250px;
+        margin-top: 4200px;
     }
 
     footer {
-        margin-top: 7800px;
+        margin-top: 2980px;
         flex-wrap: wrap;
         padding: 20px;
-        gap: 5px;
-        text-align: center;
     }
 
+}
+
+@media all and (max-width: 400px) {
+   
+    .hotel {
+        margin-top: 1790px;
+    }
+
+    .hotel > a {
+        margin-top: 1670px;
+    }
+
+    .quote {
+        margin-top: 4260px;
+    }
+
+    .banners{
+        margin-top: 4730px;
+    }
+
+    .plans-contacts {
+        margin-top: 5735px;
+    }
+   
+    footer {
+        margin-top: 3250px;
+        flex-wrap: wrap;
+        padding: 20px;
+    } 
 }

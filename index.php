@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 
 <head>
     <meta charset="UTF-8">
@@ -10,13 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../laisvi projektai/normalize.css">
+    <link rel="stylesheet" href="../laisvi projektai/style.css">
     <script src="https://kit.fontawesome.com/6337da2237.js" crossorigin="anonymous"></script>
-    <script src="/scripts.js"></script> 
+    <script src="../laisvi projektai/scripts.js"></script> 
 </head>
 
 <body>
+    <?php 
+    require __DIR__ . "../forms/app.php"
+    ?>
 <div id="up-page" onclick="scrollToTop()"><i class="fa-solid fa-circle-arrow-up fa-3x"></i></div>
     <header class="flex-container">
         <div class="header-navigation">
@@ -46,10 +50,10 @@
                 </div>
             </div>
             <div class="navigation flex-container">
-                <div class="logo"><a href="/">Travello.</a></div>
+                <div class="logo"><a href="#">Travello.</a></div>
                 <div class="nav">
                     <ul class="flex-container">
-                        <li><a href="/">home</a></li>
+                        <li><a href="#">home</a></li>
                         <li><a href="/">about</a></li>
                         <li><a href="/">blog</a></li>
                         <li><a href="/">account</a></li>
@@ -59,7 +63,7 @@
                 <a href="javascript:void(0)" class="micon" onclick="mobnavbutton()"><i class="fa-solid fa-compass fa-beat-fade fa-2x"  style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.6;"></i></a>
                 <div id="mobile-navigation">
                     <ul class="flex-container">
-                        <li><a href="/">home</a></li>
+                        <li><a href="#">home</a></li>
                         <li><a href="/">about</a></li>
                         <li><a href="/">blog</a></li>
                         <li><a href="/">account</a></li>
@@ -84,37 +88,37 @@
             <div class="offer">
                 <i class="fa-solid fa-shop fa-2x"></i>
                 <h3>100+ Options</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <p>Select over 100 different locations to spend your holidays.</p>
             </div>
             <div class="offer">
                 <i class="fa-solid fa-fire-flame-curved fa-2x"></i>
                 <h3>Good Quality</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+                <p>We assure top-notch travel quality and service.</p>
             </div>
             <div class="offer">
                 <i class="fa-solid fa-comment fa-2x"></i>
                 <h3>Easy Interface</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <p>Our service porvides user-friendly and welcoming travel registry.</p>
             </div>
             <div class="offer">
                 <i class="fa-solid fa-desktop fa-2x"></i>
                 <h3>Tracking Code</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p>We generate an unique code you can use to track all the details of your information.</p>
             </div>
         </div>
         <button id="btn-form" onclick="popUpTask()"><i class="fa-sharp fa-solid fa-comment"></i> Message Us</button>
         <div id="popupform">
             <div class="pop-up-header flex-container">
                 <h1 class="pop-up-title">Leave your details bellow!</h1>
-                <button id="closebutton" onclick="closethatform()">&times;</button>
+                <button id="closebutton" onclick="closeThatForm()">&times;</button>
             </div>
             <div class="pop-up-content">
-                <form id="popupcontact" action="" method="post">
-                    <input type="text" name="fname" placeholder="Your name">
-                    <input type="text" name="lname" placeholder="Your last name">
-                    <input type="email" name="email" placeholder="Your email">
-                    <input type="tel" name="phone_number" placeholder="Mobile phone">
-                    <textarea name="textarea" id="text2u" placeholder="Your message"></textarea>
+                <form id="popupcontact" method="post">
+                    <input type="text" name="fname" placeholder="Your name" required autofocus><br>
+                    <input type="text" name="lname" placeholder="Your last name" required><br>
+                    <input type="email" name="email" placeholder="Your email" required><br>
+                    <input type="tel" name="phone_number" placeholder="Mobile phone" required><br>
+                    <textarea name="text_message" id="text2u" placeholder="Your message" required></textarea><br>
                     <button name="submit" type="submit" id="contact_submit">Submit</button>
                 </form>
             </div>
@@ -122,7 +126,7 @@
         <div id="overlay"></div>
         <div class="statement flex-container">
             <h1>Easily find awesome places<br> to travel this year</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quo dolorum nesciunt delectus voluptates nemo, corrupti corporis doloribus? Debitis eligendi, nam nobis labore eum corporis necessitatibus nisi nesciunt repellat. Possimus, perferendis cumque, ducimus exercitationem dolor obcaecati maxime dolores culpa iste eligendi ex, iusto ipsum dolore ad veritatis explicabo! Velit, impedit.</p>
+            <p>Welcome to Travello, your ultimate travel partner! Are you ready to embark on an adventure and explore the world's most amazing destinations? Look no further than Travello! We specialize in curating unforgettable travel experiences for our clients. Let us help you easily find awesome places to travel this year and make your dream trip a reality. Trust Travello to handle all the details and create memories that will last a lifetime.</p>
         </div>
         
     </section>
@@ -137,7 +141,7 @@
         </div>
         <div class="hotelroom container flex-container" id="singapore">
             <div class="room">
-                <img src="/assets/fotosingapore/marina-bay-sands.jpg" alt="hotel_img_singapore">
+                <img src="assets/fotosingapore/marina-bay-sands.jpg" alt="hotel_img_singapore">
                 <h3>Marina Bay Sands</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -151,7 +155,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotosingapore/the-fullerton-hotel-singapore.jpg" alt="hotel_img_singapore">
+                <img src="assets/fotosingapore/the-fullerton-hotel-singapore.jpg" alt="hotel_img_singapore">
                 <h3>The Fullerton Hotel Singapore</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -165,7 +169,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotosingapore/hotel-exterior.jpg" alt="hotel_img_singapore">
+                <img src="assets/fotosingapore/hotel-exterior.jpg" alt="hotel_img_singapore">
                 <h3>Parkroyal Collection</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -179,7 +183,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotosingapore/outdoor-pool.jpg"
+                <img src="assets/fotosingapore/outdoor-pool.jpg"
                     alt="hotel_img_singapore">
                 <h3>Shangri-La Singapore</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -196,7 +200,7 @@
         </div>
         <div class="hotelroom container flex-container" id="china">
             <div class="room">
-                <img src="/assets/fotochina/lobby.jpg" alt="hotel_img_china">
+                <img src="assets/fotochina/lobby.jpg" alt="hotel_img_china">
                 <h3>Nina Hotel Tsuen Wan West</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -210,7 +214,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotochina/exterior-daytime.jpg" alt="hotel_img_china">
+                <img src="assets/fotochina/exterior-daytime.jpg" alt="hotel_img_china">
                 <h3>Legend Palace Hotel</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -224,7 +228,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotochina/rooftop-swimming-pool.jpg" alt="hotel_img_china">
+                <img src="assets/fotochina/rooftop-swimming-pool.jpg" alt="hotel_img_china">
                 <h3>Cordis, Hong Kong</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -238,7 +242,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotochina/mandarin-oriental-hong.jpg"
+                <img src="assets/fotochina/mandarin-oriental-hong.jpg"
                     alt="hotel_img_china">
                 <h3>Mandarin Oriental, Hong Kong</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -255,7 +259,7 @@
         </div>
         <div class="hotelroom container flex-container" id="india">
             <div class="room">
-                <img src="/assets/fotoindia/exterior-view.jpg" alt="hotel_img_india">
+                <img src="assets/fotoindia/exterior-view.jpg" alt="hotel_img_india">
                 <h3>Novotel New Delhi Aerocity</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -269,7 +273,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotoindia/taj-palace-new-delhi.jpg" alt="hotel_img_india">
+                <img src="assets/fotoindia/taj-palace-new-delhi.jpg" alt="hotel_img_india">
                 <h3>Taj Palace, New Delhi</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -283,7 +287,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotoindia/lobby.jpg" alt="hotel_img_india">
+                <img src="assets/fotoindia/lobby.jpg" alt="hotel_img_india">
                 <h3>Sahara Star Hotel</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -297,7 +301,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotoindia/exterior-day.jpg"
+                <img src="assets/fotoindia/exterior-day.jpg"
                     alt="hotel_img_india">
                 <h3>The Leela Palace New Delhi</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -314,7 +318,7 @@
         </div>
         <div class="hotelroom container flex-container" id="bhutan">
             <div class="room">
-                <img src="/assets/fotobhutan/exterior2.jpg" alt="hotel_img_bhutan">
+                <img src="assets/fotobhutan/exterior2.jpg" alt="hotel_img_bhutan">
                 <h3>Taj Tashi</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -328,7 +332,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotobhutan/exterior-night-view.jpg" alt="hotel_img_bhutan">
+                <img src="assets/fotobhutan/exterior-night-view.jpg" alt="hotel_img_bhutan">
                 <h3>Le Meridien Thimphu</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -342,7 +346,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotobhutan/exterior.jpg" alt="hotel_img_bhutan">
+                <img src="assets/fotobhutan/exterior.jpg" alt="hotel_img_bhutan">
                 <h3>Le Meridien Paro Riverfront</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -356,7 +360,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotobhutan/bhutan-spirit-sanctuary.jpg"
+                <img src="assets/fotobhutan/bhutan-spirit-sanctuary.jpg"
                     alt="hotel_img_bhutan">
                 <h3>Bhutan Spirit Sanctuary</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -373,7 +377,7 @@
         </div>
         <div class="hotelroom container flex-container" id="thailand">
             <div class="room">
-                <img src="/assets/fotothailand/entrance.jpg" alt="hotel_img_thailand">
+                <img src="assets/fotothailand/entrance.jpg" alt="hotel_img_thailand">
                 <h3>Sheraton Grande Sukhumvit</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -387,7 +391,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotothailand/hotel-entrance.jpg" alt="hotel_img_thailand">
+                <img src="assets/fotothailand/hotel-entrance.jpg" alt="hotel_img_thailand">
                 <h3>The Landmark Bangkok Hotel</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -401,7 +405,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotothailand/exterior-view.jpg" alt="hotel_img_thailand">
+                <img src="assets/fotothailand/exterior-view.jpg" alt="hotel_img_thailand">
                 <h3>Banyan Tree Bangkok</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -415,7 +419,7 @@
                 <a href="/">select rooms</a>
             </div>
             <div class="room">
-                <img src="/assets/fotothailand/lobby-day-with-kimono.jpg" alt="hotel_img_thailand">
+                <img src="assets/fotothailand/lobby-day-with-kimono.jpg" alt="hotel_img_thailand">
                 <h3>The Okura Prestige Bangkok</h3>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -431,7 +435,7 @@
         </div>
         <div class="hotelroom container flex-container" id="nepal">
                 <div class="room">
-                    <img src="/assets/fotonepal/fascade.jpg" alt="hotel_img_nepal">
+                    <img src="assets/fotonepal/fascade.jpg" alt="hotel_img_nepal">
                     <h3>Hyatt Place Kathmandu</h3>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -445,7 +449,7 @@
                     <a href="/">select rooms</a>
                 </div>
                 <div class="room">
-                    <img src="/assets/fotonepal/exterior2.jpg" alt="hotel_img_nepal">
+                    <img src="assets/fotonepal/exterior2.jpg" alt="hotel_img_nepal">
                     <h3>Hyatt Regency Kathmandu</h3>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -459,7 +463,7 @@
                     <a href="/">select rooms</a>
                 </div>
                 <div class="room">
-                    <img src="/assets/fotonepal/exterior.jpg" alt="hotel_img_nepal">
+                    <img src="assets/fotonepal/exterior.jpg" alt="hotel_img_nepal">
                     <h3>Kathmandu Marriott Hotel</h3>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -473,7 +477,7 @@
                     <a href="/">select rooms</a>
                 </div>
                 <div class="room">
-                    <img src="/assets/fotonepal/meghauli-serai-a-taj.jpg" alt="hotel_img_nepal">
+                    <img src="assets/fotonepal/meghauli-serai-a-taj.jpg" alt="hotel_img_nepal">
                     <h3>Meghauli Serai, A Taj Safari</h3>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                             class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -487,14 +491,13 @@
                     <a href="/">select rooms</a>
                 </div>
         </div>
-        <div class="aroom flex-container"><a href="/">view all</a></div>
+        <a href="/">view all</a>
     </section>
     <section class="quote flex-container">
         <div class="quotation-words flex-container">
             <div class="quote-mark"><i class="fa-solid fa-quote-left fa-5x"></i></div>
-            <div class="comment">Richard is so good at what he does. Excellent communication skills made things much
-                simpler and faster. Will continue working with him.</div>
-            <div class="bywhom">Dr. Steve Watson,<div class="from">Greenland Studio inc.</div>
+            <div class="comment">Travello made my travel booking experience incredibly comfortable and stress-free. Their service was awesome, and I couldn't be happier with the result. 5/5 stars!</div>
+            <div class="bywhom">Steve Wilson,<div class="from">London, Britain</div>
             </div>
         </div>
         <div class="selection-dots"><i class="fa-solid fa-circle"></i><i class="fa-solid fa-circle"></i><i
@@ -502,7 +505,7 @@
     </section>
     <section class="banners flex-container">
         <div class="banner-1 flex-container">
-            <div class="banner-img"><img src="/assets/Papildomosfoto/banner1.png" alt="airplane"></div>
+            <div class="banner-img"><img src="assets/Papildomosfoto/banner1.png" alt="airplane"></div>
             <div class="banner-text">
                 <h2>Book your tickets at the comfort of your phone</h2>
                 <p>Book your tickets at the comfort of your phone. We're here to provide you the best service possible,
@@ -518,7 +521,7 @@
                     perfect location a breeze. Enter your dates and preferences, and we'll get to work finding you your
                     perfect destination! We can't wait to help you book your next adventure!</p>
             </div>
-            <div class="banner-img"><img src="/assets/Papildomosfoto/banner2.png" alt="luggage"></div>
+            <div class="banner-img"><img src="assets/Papildomosfoto/banner2.png" alt="luggage"></div>
         </div>
     </section>
     <section class="plans-contacts">
