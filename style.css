@@ -62,12 +62,19 @@ header {
 
 .navigation {
     justify-content: space-between;
-    background-color: rgba(9, 19, 28, 0.144);
+    background-color: rgba(9, 19, 28, 0.480);
     text-transform: uppercase;
     align-items: center;
     align-content: center;
     padding-top: 10px;
     height: 70px;
+}
+
+.navigation a:hover {
+    background-color: rgb(9, 19, 28);
+    border-bottom:0.5px solid #fff;
+    border-top:0.5px solid #fff;
+    padding: 15px;
 }
 
 #mobile-navigation {
@@ -237,7 +244,6 @@ input[id="main-search-bar"] {
     padding: 20px 100px 20px 100px;
     font-size: 2rem;
     border-radius: 15px;
-    /* text-decoration: underline; */
     background-color: #00000037;
     border: 0.5px solid white;
     color: white;
@@ -433,7 +439,6 @@ input[id="main-search-bar"] {
 }
 
 #singapore {
-    /* display: none; */
     justify-content: space-evenly;
     padding-top: 15px;
     margin-bottom: 75px;
@@ -892,6 +897,17 @@ footer {
         margin: 20px;
         padding-top: 30px;
     }
+    
+    .pop-up-title{
+        color: #fff;
+        text-transform: uppercase;
+        padding-left: 15px;
+        font-size: auto;
+    }
+
+    #popupform{
+        height: 450px;
+    }
 
     .statement{
         padding: 0px;
@@ -913,7 +929,7 @@ footer {
 
     #singapore{
         margin-top: 50px;
-        display: none;
+        display: flex;
         flex-wrap: wrap;
         justify-items: center;
         row-gap: 35px;
